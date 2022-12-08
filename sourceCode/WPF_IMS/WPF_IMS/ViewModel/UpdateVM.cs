@@ -13,6 +13,8 @@ namespace WPF_IMS.ViewModel
 
         public UpdateCommand _updateCommand { get; set; }
         public UpdateCommand _update_selectionChanged{ get; set; }
+        
+        public Action CloseAction { get; set; }
 
 
         private string instrumentNameUpdate;
@@ -145,6 +147,7 @@ namespace WPF_IMS.ViewModel
                     InstrumentUserUpdate_index = -1;
                     InstrumentProjectsUpdate_index = -1;
                 }
+                CloseAction();
             }
             else
             {
