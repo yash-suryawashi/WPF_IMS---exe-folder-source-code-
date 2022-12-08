@@ -10,6 +10,11 @@ namespace WPF_IMS.View
         public Add_dialog()
         {
             InitializeComponent();
+            
+            AddVM vm = new AddVM();
+            this.DataContext = vm;
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(this.Close);
 
             txtName.Text = string.Empty;
             cmbUser.SelectedIndex = -1;
