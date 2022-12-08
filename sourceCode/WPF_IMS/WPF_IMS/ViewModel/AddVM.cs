@@ -11,6 +11,8 @@ namespace WPF_IMS.ViewModel
     public class AddVM : ViewModelBase
     {
         string multipleSelections, name, user, project;
+        
+        public Action CloseAction { get; set; }
 
         public AddCommand _addCommand { get; set; }
 
@@ -108,7 +110,8 @@ namespace WPF_IMS.ViewModel
             i.addInstrument(newInst);
             NewInstrumentName = string.Empty;
             NewInstrumentUser_index = -1;
-            NewInstrumentProjects_index = -1;   
+            NewInstrumentProjects_index = -1;  
+            CloseAction();
         }
 
         public AddVM()
