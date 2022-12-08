@@ -18,6 +18,11 @@ namespace WPF_IMS.View
         public Update_dialog()
         {
             InitializeComponent();
+            
+            UpdateVM vm = new UpdateVM();
+            this.DataContext = vm;
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(this.Close);
 
             userList = new List<string> { "Yash S", "Vinayak G", "Shailesh S", "Ajinkya A", "Pradumna S", "Nikhil C" };
             projectList = new List<string> { "project-1", "project-2", "project-3", "project-4" };
